@@ -1,6 +1,6 @@
 # Plan — Modern Cleaning Business Website
 
-Status: Phase 11 complete; Phase 12 awaiting approval.
+Status: Phase 12 complete; Phase 13 awaiting approval.
 
 ## Phase 0 — Project discovery
 
@@ -329,11 +329,15 @@ public/
 
 ## Phase 12 — Deployment
 
+**Status: Completed — GitHub and Cloudflare Pages production verified.**
+
 - **Цель:** опубликовать проверенную сборку.
 - **Вход:** завершённый Phase 11.
 - **Результат:** стабильный публичный URL и проверенный production smoke test.
 - **Готово, когда:** live version совпадает со сборкой и основной сценарий работает.
 - **Нельзя:** деплоить непроверенные изменения или добавлять инфраструктуру без нужды.
+
+**Phase 12 result:** публичный репозиторий создан в `Ramoomes/limestone-linen-cleaning` и подключён к Cloudflare Pages через Git integration. Build command: `npm run build`; output: `dist`; production branch: `main`. Production URL: `https://limestone-linen-cleaning.pages.dev/`. Live title, секции, изображения, anchors и форма прошли browser smoke test. Canonical, Open Graph URL, `robots.txt` и `sitemap.xml` используют production URL.
 
 ## Phase 13 — Portfolio delivery
 

@@ -44,6 +44,8 @@
 | D-038 | Approved | Responsive-проверки сосредоточены на 768, 390 и 375 px; полный visual/performance audit перенесён в Phase 11. | Целевые ширины покрывают текущий scope, а один полный релизный аудит предотвращает повторную работу. |
 | D-039 | Approved | Добавить минимальный `public/robots.txt`; canonical и sitemap создавать после получения production URL в Phase 12. | Исправляет подтверждённый SEO-дефект без выдуманного адреса сайта. |
 | D-040 | Rejected | Добавлять `llms.txt` только ради отдельного Agentic Browsing score. | Файл не входит в scope, не улучшает согласованные SEO/accessibility цели и не нужен пользователю сайта. |
+| D-041 | Approved | Итоговый portfolio repository размещён в `Ramoomes/limestone-linen-cleaning` и подключён к Cloudflare Pages через Git integration. | Соответствует выбранному пользователем GitHub-аккаунту и даёт автоматические Pages builds из `main`. |
+| D-042 | Approved | Production URL: `https://limestone-linen-cleaning.pages.dev/`; использовать его в canonical, Open Graph, robots и sitemap. | URL подтверждён успешным production deployment и browser smoke test. |
 
 ## Формат новой записи
 
