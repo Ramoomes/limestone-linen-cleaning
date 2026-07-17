@@ -47,6 +47,9 @@
 | D-041 | Approved | Итоговый portfolio repository размещён в `Ramoomes/limestone-linen-cleaning` и подключён к Cloudflare Pages через Git integration. | Соответствует выбранному пользователем GitHub-аккаунту и даёт автоматические Pages builds из `main`. |
 | D-042 | Approved | Production URL: `https://limestone-linen-cleaning.pages.dev/`; использовать его в canonical, Open Graph, robots и sitemap. | URL подтверждён успешным production deployment и browser smoke test. |
 | D-043 | Approved | В portfolio-polish заменить три недостаточно качественных Stitch asset: hero и care — на локальные upscale-фотографии, service area — на локальную карту Austin из OpenStreetMap/Wikimedia с видимой CC BY-SA attribution. | Устраняет растягивание исходников 512 px и вымышленную географию без новой библиотеки, API или изменения архитектуры. |
+| D-044 | Approved | Перед controlled design polish сохранить стабильную версию commit `11e9146`; изменить только trust strip, иерархию services и editorial rhythm Why Us обычным CSS. | Уменьшает визуальную повторяемость без редизайна, новых зависимостей, изменения контента или функциональности. |
+| D-045 | Approved | Recurring Cleaning получает умеренный визуальный приоритет через больший grid span, без badge, цены, overlay или нового декоративного стиля. | Создаёт практичную иерархию внутри пяти существующих услуг, сохраняя спокойное Organic Austin направление. |
+| D-046 | Approved | Для первого native FAQ использовать boolean-атрибут `open` вместо неподдерживаемого React DOM prop `defaultOpen`. | Убирает console warning и сохраняет исходное начальное открытое состояние без новой логики или зависимости. |
 
 ## Формат новой записи
 

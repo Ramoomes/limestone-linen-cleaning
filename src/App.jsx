@@ -270,7 +270,7 @@ function App() {
               <span className="accent-line" aria-hidden="true" />
               <div className="faq-list">
                 {faqs.map(([question, answer], index) => (
-                  <details key={question} defaultOpen={index === 0}>
+                  <details key={question} open={index === 0 ? true : undefined}>
                     <summary>{question}<span aria-hidden="true" /></summary>
                     <p>{answer}</p>
                   </details>

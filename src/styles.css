@@ -75,31 +75,33 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
 .quiet { margin-top: 2rem; color: var(--muted); font-size: 0.82rem; }
 
 .trust-strip { border-bottom: 1px solid var(--border); background: var(--card); }
-.trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.trust-item { min-height: 120px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.75rem; padding: 1.5rem; text-align: center; border-right: 1px solid var(--border); }
-.trust-item:last-child { border-right: 0; }
+.trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.5rem, 4vw, 4.5rem); }
+.trust-item { min-height: 108px; display: flex; align-items: center; gap: 1rem; padding-block: 1.5rem; text-align: left; }
 .trust-item svg { color: var(--juniper); }
-.trust-item span { max-width: 13ch; font-size: 0.88rem; line-height: 1.35; }
+.trust-item span { max-width: 15ch; font-size: 0.88rem; line-height: 1.4; }
 
 .section-heading { margin-bottom: 3rem; }
 .section-heading.centered { display: flex; align-items: center; flex-direction: column; text-align: center; }
 .section-heading p { max-width: 680px; margin: 0.8rem auto 0; color: #3e4945; }
 .accent-line { width: 32px; height: 2px; display: block; margin-top: 0.9rem; background: var(--terracotta); }
-.service-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; }
-.service-card { overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
-.service-card.featured { border: 2px solid var(--juniper); }
-.service-card img { width: 100%; aspect-ratio: 1.35; object-fit: cover; }
-.service-card-copy { padding: 1.4rem 1.35rem 1.6rem; }
+.services-section { padding-block: clamp(5.5rem, 8vw, 8rem); }
+.service-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.5rem 1.5rem; }
+.service-card { grid-column: span 4; overflow: hidden; background: transparent; }
+.service-card.featured { grid-column: span 7; }
+.service-card:last-child { grid-column: span 5; }
+.service-card img { width: 100%; aspect-ratio: 1.45; border-radius: var(--radius); object-fit: cover; }
+.service-card.featured img { aspect-ratio: 2.1; }
+.service-card-copy { padding: 1.25rem 0 0; }
 .service-card-copy p { margin: 0.75rem 0 0; color: #3f4a46; font-size: 0.88rem; line-height: 1.65; }
 
-.story-section { background: var(--card); }
-.story-grid { max-width: 1500px; min-height: 540px; display: grid; grid-template-columns: 1fr 1.25fr; margin-inline: auto; }
-.story-image { width: 100%; height: 100%; min-height: 540px; object-fit: cover; }
-.story-copy { align-self: center; max-width: 680px; padding: 4rem clamp(2.5rem, 7vw, 7rem); }
+.story-section { padding-block: clamp(5rem, 8vw, 8rem); background: var(--card); }
+.story-grid { width: min(100% - 3rem, var(--container)); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr); align-items: center; gap: clamp(3rem, 6vw, 6.5rem); margin-inline: auto; }
+.story-image { width: 100%; height: clamp(620px, 50vw, 720px); border-radius: var(--radius); object-fit: cover; }
+.story-copy { max-width: 540px; padding: 0; }
 .story-copy h2 { max-width: 15ch; }
 .story-copy .lead { margin: 1.4rem 0 1.8rem; }
 .care-list { margin: 0; padding: 0; list-style: none; }
-.care-list li { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.care-list li { display: grid; grid-template-columns: 28px 1fr; align-items: center; gap: 1rem; padding: 0.85rem 0; }
 .care-list svg { color: var(--juniper); }
 .care-list span { font-size: 0.9rem; }
 
@@ -161,7 +163,9 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
   .nav-list { gap: 1.1rem; }
   .hero-grid { grid-template-columns: 0.9fr 1.1fr; }
   .hero-copy { padding-inline: 2.5rem; }
-  .service-grid { gap: 0.8rem; }
+  .service-grid { gap: 2rem 1rem; }
+  .story-grid { gap: 3rem; }
+  .story-image { height: 540px; }
   .process-grid li { padding-inline: 1rem; }
 }
 
@@ -170,7 +174,8 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
   .header-cta { display: none; }
   .menu-button { display: inline-flex; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .story-copy { padding-inline: 2.5rem; }
+  .service-card, .service-card.featured, .service-card:last-child { grid-column: auto; }
+  .service-card.featured img { aspect-ratio: 1.45; }
   .process-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .process-grid li { border-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
   .service-area-grid { grid-template-columns: 1fr 1.4fr; }
@@ -180,8 +185,9 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
   .hero-grid, .story-grid, .contact-grid, .service-area-grid { grid-template-columns: 1fr; }
   .hero-copy { padding: 4rem 2rem 3rem; }
   .hero-image { min-height: 420px; }
-  .story-image { min-height: 430px; }
-  .story-copy { max-width: none; padding: 4rem 2rem; }
+  .story-grid { width: min(100% - 3rem, var(--container)); gap: 3rem; }
+  .story-image { height: 430px; }
+  .story-copy { max-width: none; }
   .service-area-grid { gap: 1.5rem; }
   .service-area h2 { max-width: 16ch; }
   .faq-column, .quote-column { padding: 4.5rem 0; }
@@ -199,15 +205,13 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
   .hero-copy { padding: 3.5rem 1.25rem 2.5rem; }
   .hero-image { min-height: 330px; height: 88vw; max-height: 430px; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-item { min-height: 108px; padding: 1.1rem; }
-  .trust-item:nth-child(2) { border-right: 0; }
-  .trust-item:nth-child(-n + 2) { border-bottom: 1px solid var(--border); }
-  .services-section { padding-block: 4.5rem; }
+  .trust-item { min-height: 96px; padding-block: 1rem; }
+  .services-section { padding-block: 5rem; }
   .section-heading { margin-bottom: 2rem; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card img { aspect-ratio: 1.6; }
-  .story-image { min-height: 360px; }
-  .story-copy { padding: 3.5rem 1.25rem; }
+  .story-image { height: 360px; }
+  .story-section { padding-block: 4.5rem; }
   .process-section { padding-block: 4rem; }
   .process-grid li { grid-template-columns: 52px 38px 1fr; padding-inline: 0; }
   .service-area { padding-block: 3.5rem; }

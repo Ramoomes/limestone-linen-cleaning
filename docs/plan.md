@@ -1,6 +1,6 @@
 # Plan — Modern Cleaning Business Website
 
-Status: Phase 12 complete; Phase 13 awaiting approval.
+Status: Phase 13 controlled design polish implemented; awaiting visual approval before any further iteration.
 
 ## Phase 0 — Project discovery
 
@@ -346,3 +346,24 @@ public/
 - **Результат:** title, role, description, 5 skills, cover, 4–6 screenshots, короткое видео и live link.
 - **Готово, когда:** карточка опубликована и материалы проверены в preview.
 - **Нельзя:** выдавать demo за оплаченный клиентский проект или бесконечно полировать опубликованный кейс.
+
+### Controlled design polish pass
+
+**Stable checkpoint:** `11e9146 Checkpoint stable design before polish`.
+
+**Three strongest repetition causes:**
+
+1. Trust strip reads as four equal table cells because every item has identical width, centering, height and vertical separators.
+2. Services use five cards with identical dimensions, image ratios and copy blocks; the featured service differs mainly by a heavier border.
+3. Why Us repeats a balanced split-section pattern and adds three full-width list dividers, so its rhythm feels mechanical rather than editorial.
+
+**Minimal implementation plan:**
+
+1. CSS-only trust-strip adjustment: remove vertical separators, loosen item alignment and preserve restrained outer boundaries.
+2. CSS-only service hierarchy: use a 12-column desktop grid, let Recurring Cleaning span more space, reduce card borders and retain simple tablet/mobile reflow.
+3. CSS-only Why Us adjustment: change the desktop column ratio, image scale, copy alignment and list spacing; remove unnecessary internal dividers.
+4. Verify desktop, tablet and mobile; navigation, CTA, FAQ and form; overflow, console, lint and production build. Stop for visual review before deployment or another design pass.
+
+**Scope guard:** preserve content, DOM order, functionality, brand tokens, typography, imagery, accessibility and existing breakpoints. No dependencies, new colors, effects, sections or complex positioning.
+
+**Result:** trust strip separators removed and alignment loosened; services use a 12-column desktop hierarchy with Recurring Cleaning spanning more space; Why Us uses an image-led contained editorial composition with fewer internal rules. Desktop 1440px, tablet 768px and mobile 390px have no horizontal overflow. Desktop/mobile navigation, CTA links, five FAQ controls, native form validation and success state pass. Console is clean; lint and production build pass. Awaiting user visual review before commit or deployment.
