@@ -179,7 +179,7 @@ function App() {
               </div>
               <p className="quiet">Serving Austin and nearby communities</p>
             </div>
-            <img className="hero-image" src={heroImage} alt="A warm Austin living room with linen furniture, limestone details, and abundant natural light." width="512" height="286" fetchPriority="high" />
+            <img className="hero-image" src={heroImage} alt="A calm, sunlit living room with warm wood and neutral linen furnishings." width="2528" height="1696" fetchPriority="high" />
           </div>
         </section>
 
@@ -218,7 +218,7 @@ function App() {
 
         <section className="story-section" id="why-us">
           <div className="story-grid">
-            <img className="story-image" src={careImage} alt="A cleaning professional carefully wiping a wooden table in a bright residential home." width="512" height="279" loading="lazy" />
+            <img className="story-image" src={careImage} alt="A cleaning professional carefully wiping a wooden table in a bright residential home." width="2048" height="2048" loading="lazy" />
             <div className="story-copy">
               <p className="eyebrow">Care without the uncertainty</p>
               <h2>Care you can see. Communication you can count on.</h2>
@@ -254,7 +254,12 @@ function App() {
               <span className="accent-line" aria-hidden="true" />
               <p>Not sure whether your neighborhood is covered? Send us your ZIP code.</p>
             </div>
-            <img src={serviceAreaImage} alt="Stylized map showing Austin, Cedar Park, Round Rock, Pflugerville, Bee Cave, and Lakeway." width="512" height="286" loading="lazy" />
+            <figure className="service-area-map">
+              <img src={serviceAreaImage} alt="Street map centered on Austin, Texas." width="2207" height="812" loading="lazy" />
+              <figcaption>
+                Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap contributors</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA</a>.
+              </figcaption>
+            </figure>
           </div>
         </section>
 

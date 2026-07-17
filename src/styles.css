@@ -115,7 +115,10 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
 .service-area-grid { display: grid; grid-template-columns: 0.75fr 1.5fr; align-items: center; gap: 3rem; }
 .service-area h2 { max-width: 12ch; }
 .service-area p { max-width: 28ch; margin-top: 1.25rem; }
-.service-area img { width: 100%; max-height: 300px; object-fit: contain; mix-blend-mode: multiply; }
+.service-area-map { margin: 0; }
+.service-area-map img { display: block; width: 100%; aspect-ratio: 2207 / 812; object-fit: cover; mix-blend-mode: multiply; border: 1px solid var(--border); }
+.service-area-map figcaption { margin-top: 0.45rem; color: var(--muted); font-size: 0.68rem; text-align: right; }
+.service-area-map a { color: inherit; }
 
 .contact-section { background: var(--card); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.25fr; }
@@ -208,7 +211,7 @@ body:has(.mobile-menu[open]) { overflow: hidden; }
   .process-section { padding-block: 4rem; }
   .process-grid li { grid-template-columns: 52px 38px 1fr; padding-inline: 0; }
   .service-area { padding-block: 3.5rem; }
-  .service-area img { margin-top: 1rem; }
+  .service-area-map { margin-top: 1rem; }
   .faq-column, .quote-column { padding: 3.5rem 0; }
   .field-grid, .footer-grid { grid-template-columns: 1fr; }
   .quote-form input, .quote-form select, .quote-form textarea { font-size: 1rem; }
